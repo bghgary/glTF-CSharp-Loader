@@ -21,6 +21,8 @@ namespace GeneratorLib
         }
 
         public Dictionary<string, Schema> FileSchemas { get; private set; }
+        public bool MakeExtrasJTokens { get; set; } = false;
+        public bool MakeExtensionsJTokens { get; set; } = false;
 
         public void ParseSchemas()
         {
@@ -266,6 +268,7 @@ namespace GeneratorLib
             var name = Helpers.ParsePropertyName(rawName);
             var fieldName = "m_" + name.Substring(0, 1).ToLower() + name.Substring(1);
             var codegenType = CodegenTypeFactory.MakeCodegenType(rawName, schema);
+            codegenType = SupportExtrasAndExtensions(name, codegenType);
             target.Members.AddRange(codegenType.AdditionalMembers);
 
             var propertyBackingVariable = new CodeMemberField
@@ -340,5 +343,21 @@ namespace GeneratorLib
             csharpcodeprovider.GenerateCodeFromCompileUnit(schemaFile, tw1, new CodeGeneratorOptions());
             tw1.Close();
         }
+
+        private CodegenType SupportExtrasAndExtensions(string name, CodegenType codegenType)
+        {
+            if(MakeExtrasJTokens && name == "Extras")
+            {
+                codegenType.CodeType = new CodeTypeReference(typeof(Newtonsoft.Json.Linq.JToken));
+            }
+
+            if(MakeExtensionsJTokens && name == "Extensions")
+            {
+                codegenType.CodeType.TypeArguments[1] = new CodeTypeReference(typeof(Newtonsoft.Json.Linq.JToken));
+            }
+
+            return codegenType;
+        }
+
     }
 }
