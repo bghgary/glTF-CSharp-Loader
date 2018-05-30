@@ -1,20 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generator", "Generator\Generator.csproj", "{DDD005C7-D63D-4707-9464-1BCB9FD00454}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Generator", "Generator\Generator.csproj", "{DDD005C7-D63D-4707-9464-1BCB9FD00454}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneratorLib", "GeneratorLib\GeneratorLib.csproj", "{ED3BEBD3-A9B9-42D9-A778-43E8CFB3B359}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeneratorLib", "GeneratorLib\GeneratorLib.csproj", "{ED3BEBD3-A9B9-42D9-A778-43E8CFB3B359}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneratorUnitTests", "GeneratorUnitTests\GeneratorUnitTests.csproj", "{722A7321-13D5-42D2-9E10-EC337BBEDA92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeneratorUnitTests", "GeneratorUnitTests\GeneratorUnitTests.csproj", "{722A7321-13D5-42D2-9E10-EC337BBEDA92}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "glTFLoader", "glTFLoader\glTFLoader.csproj", "{C2F2E13B-594F-4592-A2D4-F44BBCE65F90}"
 	ProjectSection(ProjectDependencies) = postProject
 		{DDD005C7-D63D-4707-9464-1BCB9FD00454} = {DDD005C7-D63D-4707-9464-1BCB9FD00454}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "glTFLoaderUnitTests", "glTFLoaderUnitTests\glTFLoaderUnitTests.csproj", "{55C01A0A-61C6-478C-9AAC-874709AEA393}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "glTFLoaderUnitTests", "glTFLoaderUnitTests\glTFLoaderUnitTests.csproj", "{55C01A0A-61C6-478C-9AAC-874709AEA393}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "glTFglbconverter", "glTFglbconverter\glTFglbconverter.csproj", "{FCA0675C-941E-4992-BBEF-1479013C2CB8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,8 +44,15 @@ Global
 		{55C01A0A-61C6-478C-9AAC-874709AEA393}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55C01A0A-61C6-478C-9AAC-874709AEA393}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55C01A0A-61C6-478C-9AAC-874709AEA393}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCA0675C-941E-4992-BBEF-1479013C2CB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCA0675C-941E-4992-BBEF-1479013C2CB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCA0675C-941E-4992-BBEF-1479013C2CB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCA0675C-941E-4992-BBEF-1479013C2CB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C45481E-4993-4FFE-B03D-62E646E80009}
 	EndGlobalSection
 EndGlobal

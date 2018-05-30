@@ -8,6 +8,7 @@ namespace Generator
         static void Main(string[] args)
         {
             var generator = new CodeGenerator(@"..\..\..\..\..\glTF\specification\2.0\schema\glTF.schema.json");
+            generator.MakeExtensionsJTokens = generator.MakeExtrasJTokens = true;
             generator.ParseSchemas();
             generator.ExpandSchemaReferences();
             generator.EvaluateInheritance();
